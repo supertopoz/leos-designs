@@ -371,6 +371,14 @@ figcaption {
   aspect-ratio: 4 / 3;
 }
 
+.video-card iframe {
+  display: block;
+  width: 100%;
+  height: 430px;
+  border: 0;
+  background: #000000;
+}
+
 .render-card.tall img {
   aspect-ratio: 3 / 4;
 }
@@ -487,7 +495,8 @@ figcaption {
   }
 
   .sketch-panel img,
-  .render-card img {
+  .render-card img,
+  .video-card iframe {
     min-height: 0;
     height: 340px;
   }
