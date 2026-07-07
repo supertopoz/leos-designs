@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" modified="2026-07-07T11:50:00.000Z" agent="drawio-github-connector" version="26.0.0">
+  <diagram id="github-connector-import-flow" name="GitHub Connector Import Flow">
+    <mxGraphModel dx="1214" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Hosted draw.io GitHub import flow" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;fontColor=#172B4D;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="244" y="40" width="680" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="plugin" value="draw.io plugin&lt;br&gt;File &amp;gt; Open from &amp;gt; GitHub Connector" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3FCEF;strokeColor=#00875A;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="90" y="170" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="connector" value="GitHub connector&lt;br&gt;server-side token mode" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DEEBFF;strokeColor=#0052CC;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="475" y="170" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="github" value="GitHub API&lt;br&gt;repos, branches, file contents" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0B3;strokeColor=#FFAB00;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="860" y="170" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="repos" value="Repository list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F5F7;strokeColor=#6B778C;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="190" y="360" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="files" value="Recent .drawio files" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F5F7;strokeColor=#6B778C;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="490" y="360" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="open" value="Open in editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F5F7;strokeColor=#6B778C;fontColor=#172B4D;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="790" y="360" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-plugin-connector" value="/api/github/*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0052CC;fontColor=#0052CC;endArrow=block;endFill=1;" edge="1" parent="1" source="plugin" target="connector">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-connector-github" value="Bearer token stays server-side" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0052CC;fontColor=#0052CC;endArrow=block;endFill=1;" edge="1" parent="1" source="connector" target="github">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-repos" value="select repo + branch" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6B778C;fontColor=#6B778C;endArrow=block;endFill=1;" edge="1" parent="1" source="repos" target="files">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-files" value="fetch file content" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6B778C;fontColor=#6B778C;endArrow=block;endFill=1;" edge="1" parent="1" source="files" target="open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
